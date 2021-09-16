@@ -1,17 +1,23 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 
-function Square(value) {
+function Square({
+  id, handleClick, sign,
+}) {
   const [valueGrid, setValueGrid] = useState('');
 
-  const handleClick = () => {
-    setValueGrid(value.value);
+  const updateData = () => {
+    setValueGrid(sign);
   };
 
   return (
     <button
       className="square"
-      onClick={handleClick}
+      onClick={() => {
+        handleClick(id, sign);
+        updateData();
+      }}
     >
       {valueGrid}
     </button>

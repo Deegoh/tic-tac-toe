@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Board from './components/board';
 
 function App() {
-  const [content] = useState('');
-
-  return <>{content}</>;
+  return <Board />;
 }
 
 export default App;
